@@ -52,6 +52,12 @@ class VIPCustomerDiscount implements  DiscountStrategy{
         return 0.3 * amount;
     }
 }
+
+class NewCustomerDiscount implements DiscountStrategy{
+    public double getDiscount(int amount){
+        return 0.35 * amount;
+    }
+}
 class Customer{
     DiscountStrategy discountStrategy;
     public Customer(DiscountStrategy discountStrategy){
@@ -68,5 +74,9 @@ public class OpenClosedPrinciple {
         System.out.println(regular.applyDiscount(1000));
         Customer vip = new Customer(new VIPCustomerDiscount());
         System.out.println(vip.applyDiscount(1000));
+
+        Customer customerWithNewDiscount = new Customer(new NewCustomerDiscount());
+
+        System.out.println(customerWithNewDiscount.applyDiscount(1000));
     }
 }
