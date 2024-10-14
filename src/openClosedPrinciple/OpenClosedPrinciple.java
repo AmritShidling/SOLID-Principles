@@ -67,6 +67,16 @@ class Customer{
         return this.discountStrategy.getDiscount(amount);
     }
 }
+
+
+class Vehicle{
+    int wheel;
+    public Vehicle(int wheel){
+        this.wheel = wheel;
+    }
+
+
+}
 public class OpenClosedPrinciple {
 
     public static void main(String[] args) {
